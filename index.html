@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>WV Weltall Verlag – Digitale Editionen</title>
+    <title>WV Weltall Verlag – Digitale Buch‑Editionen</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
@@ -17,30 +17,6 @@
 
         h1, h2, h3 {
             text-align: center;
-        }
-
-        .box {
-            background: #fafafa;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 16px;
-            background: #0078d4;
-            color: #fff;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .button:hover {
-            background: #005fa3;
         }
 
         /* Buch-Boxen */
@@ -67,6 +43,21 @@
             margin-bottom: 10px;
         }
 
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: #0078d4;
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .button:hover {
+            background: #005fa3;
+        }
+
         .download-counter {
             margin-top: 8px;
             font-size: 14px;
@@ -79,41 +70,83 @@
 
 <body>
 
-<h1>WV Weltall Verlag – Digitale Editionen</h1>
+<h1>WV Weltall Verlag – Digitale Buch‑Editionen</h1>
 
 <hr>
 
-<h2>📱 Digitale App‑Editionen</h2>
+<h2>📚 Bücher von Radovan Savić</h2>
 
-<div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+<div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
 
-    <div class="box" style="flex:1; min-width:280px;">
-        <h2>🤖 Android‑Version</h2>
-        <p>Version: 1.0.0 (Release Build)</p>
-        <a class="button" href="https://github.com/weltall-verlag/i-ching/releases/download/v1.0.0/app-release.apk">
-            APK herunterladen
+    <!-- Russisch -->
+    <div class="book-box">
+        <h3>RU – Русский</h3>
+        <img src="cover_ru.jpg" alt="С гитарой по жизни к прозрению истины">
+        <p>С гитарой по жизни к прозрению истины<br>
+        Автор: Радован Савич<br>
+        ISBN 978‑3‑939693‑09‑3</p>
+
+        <a class="button" href="https://github.com/weltall-verlag/wv-digital-editions/releases/download/v1.0.0/savic_ru.pdf">
+            📘 Скачать PDF
         </a>
+
+        <div class="download-counter">
+            📊 Downloads: <span id="ruDownloads">…</span>
+        </div>
     </div>
 
-    <div class="box" style="flex:1; min-width:280px;">
-        <h2>🖥️ Windows‑Version</h2>
-        <p>Version: 1.0.0 (Release Build)</p>
-        <a class="button" href="https://github.com/weltall-verlag/i-ching/releases/download/v1.0.0/i-ching-windows.zip">
-            ZIP herunterladen
+    <!-- Serbisch -->
+    <div class="book-box">
+        <h3>RS – Српски</h3>
+        <img src="cover_sr.jpg" alt="S gitarom kroz život do spoznaje istine">
+        <p>S gitarom kroz život do spoznaje istine<br>
+        Autor: Radovan Savić<br>
+        ISBN 978‑3‑939693‑09‑3</p>
+
+        <a class="button" href="https://github.com/weltall-verlag/wv-digital-editions/releases/download/v1.0.0/savic_sr.pdf">
+            📘 Preuzmi PDF
         </a>
+
+        <div class="download-counter">
+            📊 Downloads: <span id="srDownloads">…</span>
+        </div>
     </div>
 
-    <div class="box" style="flex:1; min-width:280px;">
-        <h2>🍎 iOS – geplant</h2>
-        <p>Noch nicht verfügbar</p>
-    </div>
-
-</div>
-
-<!-- Counter für App-Downloads -->
-<div style="margin-top:30px; font-size:14px; color:#555; text-align:center;">
-    <p>🤖 APK Downloads: <span id="apkDownloads">…</span></p>
-    <p>🖥️ Windows ZIP Downloads: <span id="zipDownloads">…</span></p>
 </div>
 
 <hr style="margin:50px 0;">
+
+<footer style="text-align:center; font-size:13px; color:#777; margin-top:40px;">
+    © 2026 WV Weltall Verlag e.K. – Helmut Bayerle
+</footer>
+
+<!-- JAVASCRIPT: Download Counter -->
+<script>
+async function loadBookDownloadCounts() {
+    const apiUrl = "https://api.github.com/repos/weltall-verlag/wv-digital-editions/releases/latest";
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        let ruCount = 0;
+        let srCount = 0;
+
+        data.assets.forEach(asset => {
+            if (asset.name.includes("savic_ru")) ruCount = asset.download_count;
+            if (asset.name.includes("savic_sr")) srCount = asset.download_count;
+        });
+
+        document.getElementById("ruDownloads").textContent = ruCount;
+        document.getElementById("srDownloads").textContent = srCount;
+
+    } catch (error) {
+        console.error("Book Counter Error:", error);
+    }
+}
+
+loadBookDownloadCounts();
+</script>
+
+</body>
+</html>
