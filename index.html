@@ -73,30 +73,39 @@ Besplatna digitalna izdanja naših knjiga u PDF formatu.
 
 <hr>
 
-<h2>📘 Radovan Savić – Autobiografische Werke</h2>
+<h2>📘 Radovan Savić</h2>
+<div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
 
-<div class="book-block">
-    <p class="lang">🇷🇺 RU – Русский</p>
-    <img src="radovan-savich-ru/cover_ru.jpg" alt="RU Cover" class="cover">
-    <h3>С гитарой по жизни к прозрению истины</h3>
-    <p>Автор: Радован Савич<br>
-    ISBN 978‑3‑939693‑09‑3</p>
-    <p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" class="pdf-icon" alt="PDF">
-        <a href="radovan-savich-ru/savich-s-gitaroj-po-ghizni.pdf">Скачать PDF</a>
-    </p>
-</div>
+    <!-- Russisch -->
+    <div class="book-box" style="flex:1; min-width:320px; text-align:center;">
+        <h3>RU – Русский</h3>
+        <img src="cover_ru.jpg" alt="С гитарой по жизни к прозрению истины" style="width:180px; border-radius:6px;">
+        <p>С гитарой по жизни к прозрению истины<br>
+        Автор: Радован Савич<br>
+        ISBN 978‑3‑939693‑09‑3</p>
+        <a class="button" href="https://github.com/weltall-verlag/wv-digital-editions/releases/download/v1.0.0/savic_ru.pdf">
+            📘 Скачать PDF
+        </a>
+        <p style="margin-top:8px; font-size:14px; color:#555;">
+            📊 Downloads: <span id="ruDownloads">…</span>
+        </p>
+    </div>
 
-<div class="book-block">
-    <p class="lang">🇷🇸 RS – Српски</p>
-    <img src="radovan-savich-sr/cover_rs.jpg" alt="SR Cover" class="cover">
-    <h3>S gitarom kroz život do spoznaje istine</h3>
-    <p>Autor: Radovan Savić<br>
-    ISBN 978‑3‑939693‑10‑9</p>
-    <p>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" class="pdf-icon" alt="PDF">
-        <a href="radovan-savich-sr/savich-gitarom-kroz-zivot.pdf">Preuzmi PDF</a>
-    </p>
+    <!-- Serbisch -->
+    <div class="book-box" style="flex:1; min-width:320px; text-align:center;">
+        <h3>RS – Српски</h3>
+        <img src="cover_sr.jpg" alt="S gitarom kroz život do spoznaje istine" style="width:180px; border-radius:6px;">
+        <p>S gitarom kroz život do spoznaje istine<br>
+        Autor: Radovan Savić<br>
+        ISBN 978‑3‑939693‑09‑3</p>
+        <a class="button" href="https://github.com/weltall-verlag/wv-digital-editions/releases/download/v1.0.0/savic_sr.pdf">
+            📘 Preuzmi PDF
+        </a>
+        <p style="margin-top:8px; font-size:14px; color:#555;">
+            📊 Downloads: <span id="srDownloads">…</span>
+        </p>
+    </div>
+
 </div>
 
 </div>
@@ -104,6 +113,32 @@ Besplatna digitalna izdanja naših knjiga u PDF formatu.
 <footer>
     © WV Weltall Verlag e.K., Bad Nauheim – Digitale Editionen 2026
 </footer>
+<script>
+async function loadBookDownloadCounts() {
+    const apiUrl = "https://api.github.com/repos/weltall-verlag/wv-digital-editions/releases/latest";
+
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        let ruCount = 0;
+        let srCount = 0;
+
+        data.assets.forEach(asset => {
+            if (asset.name.includes("savic_ru")) ruCount = asset.download_count;
+            if (asset.name.includes("savic_sr")) srCount = asset.download_count;
+        });
+
+        document.getElementById("ruDownloads").textContent = ruCount;
+        document.getElementById("srDownloads").textContent = srCount;
+
+    } catch (error) {
+        console.error("Error loading book download counts:", error);
+    }
+}
+
+loadBookDownloadCounts();
+</script>
 
 </body>
 </html>
