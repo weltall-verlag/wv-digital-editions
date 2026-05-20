@@ -68,25 +68,27 @@
             margin: 0 auto 15px auto;
             border-radius: 6px;
         }
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #1b7b7b;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-top: 10px;
 
-        .button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #1b7b7b;
-            color: white;
-            padding: 10px 18px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 1.1em;
-            margin-top: 10px;
-        }
+    /* Animation */
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
 
-        .button img {
-            width: 18px;
-            margin-right: 8px;
-        }
-
+.button:hover {
+    background: #219191; /* etwas heller */
+    transform: translateY(-2px); /* ganz leichte Anhebung */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* dezenter Schatten */
+}
         .downloads {
             margin-top: 8px;
             font-size: 0.9em;
