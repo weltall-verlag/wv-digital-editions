@@ -2,181 +2,140 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>WV Weltall Verlag – Digitale Buch‑Editionen</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WV Weltall Verlag – Digitale Buch-Editionen</title>
+
+    <!-- Playfair Display -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
+            font-family: "Georgia", serif;
+            background: #f7f7f7;
+            margin: 0;
             padding: 20px;
-            line-height: 1.6;
             color: #333;
         }
 
-        h1, h2, h3 {
+        h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 2.6em;
+            font-weight: 700;
+            color: #1b7b7b;
             text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
         }
 
-        /* Buch-Boxen */
+        h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.9em;
+            font-weight: 600;
+            color: #1b7b7b;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            letter-spacing: 0.3px;
+        }
+
+        h3 {
+            font-family: "Playfair Display", serif;
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #1b7b7b;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
         .book-box {
-            flex: 1;
-            min-width: 320px;
-            text-align: center;
-            background: #fafafa;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            background: white;
+            border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
-        .book-box:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .book-box img {
+        .cover {
+            display: block;
             width: 180px;
+            margin: 0 auto 15px auto;
             border-radius: 6px;
-            margin-bottom: 10px;
         }
 
         .button {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 16px;
-            background: #0078d4;
-            color: #fff;
-            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #1b7b7b;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: 500;
+            font-size: 1.1em;
+            margin-top: 10px;
         }
 
-        .button:hover {
-            background: #005fa3;
+        .button img {
+            width: 18px;
+            margin-right: 8px;
         }
 
-        .download-counter {
+        .downloads {
             margin-top: 8px;
-            font-size: 14px;
+            font-size: 0.9em;
             color: #555;
-            border-top: 1px solid #ddd;
-            padding-top: 6px;
+            text-align: center;
         }
-
-h1 {
-    font-family: "Playfair Display", serif;
-    font-size: 2.4em;
-    font-weight: 700;
-    color: #1b7b7b; /* sanftes Türkis wie im Beispiel */
-    text-align: center;
-    letter-spacing: 0.3px;
-    margin-bottom: 20px;
-    border: none; /* entfernt zusätzliche Linien */
-}
-
-h2 {
-    font-family: "Playfair Display", serif;
-    font-size: 1.8em;
-    font-weight: 600;
-    color: #1b7b7b;
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 25px;
-    letter-spacing: 0.3px;
-    border: none;
-}
-
-
-h2::after {
-    content: "";
-    display: block;
-    width: 70px;
-    height: 2px;
-    background: #bbb;
-    margin: 12px auto 0 auto;
-    border-radius: 2px;
-}
     </style>
 </head>
 
 <body>
 
 <h1>WV Weltall Verlag – Digitale Buch‑Editionen</h1>
+<h2>Bücher von Radovan Savić</h2>
 
-<h2>📚 Bücher von Radovan Savić</h2>
+<!-- RUSSISCH -->
+<div class="book-box">
+    <h3>🇷🇺 Русский</h3>
+    <img src="radovan-savich-ru/cover_ru.jpg" class="cover" alt="Russisches Cover">
 
-<div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center;">
-
-    <!-- Russisch -->
-    <div class="book-box">
-        <h3>RU – Русский</h3>
-        <img src="radovan-savich-ru/cover_ru.jpg" alt="С гитарой по жизни к прозрению истины">
-        <p>С гитарой по жизни к прозрению истины<br>
-        Автор: Радован Савич<br>
-        ISBN 978‑3‑939693‑09‑3</p>
-
-    <a class="button" href="radovan-savich-ru/savich-s-gitaroj-po-ghizni.pdf" download>
-        📄 Скачать PDF
+    <a class="button"
+       href="https://github.com/weltall-verlag/wv-digital-editions/releases/download/v1.0.0/savich-s-gitaroj-po-ghizni.pdf"
+       download>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg">
+        Скачать PDF
     </a>
 
-        <div class="download-counter">
-            📊 Downloads: <span id="ruDownloads">…</span>
-        </div>
-    </div>
-
-    <!-- Serbisch -->
-    <div class="book-box">
-        <h3>RS – Српски</h3>
-        <img src="radovan-savich-sr/cover_rs.jpg" alt="S gitarom kroz život do spoznaje istine">
-        <p>S gitarom kroz život do spoznaje istine<br>
-        Autor: Radovan Savić<br>
-        ISBN 978‑3‑939693‑09‑3</p>
-
-        <a class="button" href="radovan-savich-rs/savic-s-gitarom-kroz-zivot.pdf" download>
-            📄 Preuzmi PDF
-        </a>
-        <div class="download-counter">
-            📊 Downloads: <span id="srDownloads">…</span>
-        </div>
-    </div>
-
+    <div class="downloads" id="downloads-ru">Downloads: …</div>
 </div>
 
-<hr style="margin:50px 0;">
+<!-- SERBISCH -->
+<div class="book-box">
+    <h3>🇷🇸 Српски</h3>
+    <img src="radovan-savich-rs/cover_sr.jpg" class="cover" alt="Serbisches Cover">
 
-<footer style="text-align:center; font-size:13px; color:#777; margin-top:40px;">
-    © 2026 WV Weltall Verlag e.K. – Helmut Bayerle
-</footer>
+    <a class="button"
+       href="https://github.com/weltall-verlag/wv-digital-editions/releases/download/v1.0.0/savich-s-gitaroj-po-ghizni.pdf"
+       download>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg">
+        Preuzmi PDF
+    </a>
 
-<!-- JAVASCRIPT: Download Counter -->
+    <div class="downloads" id="downloads-rs">Downloads: …</div>
+</div>
+
 <script>
-async function loadBookDownloadCounts() {
-    const apiUrl = "https://api.github.com/repos/weltall-verlag/wv-digital-editions/releases/latest";
+fetch("https://api.github.com/repos/weltall-verlag/wv-digital-editions/releases/latest")
+    .then(response => response.json())
+    .then(data => {
+        let assets = data.assets;
 
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
+        let ru = assets.find(a => a.name.includes("savic_ru"));
+        let rs = assets.find(a => a.name.includes("savic_sr"));
 
-        let ruCount = 0;
-        let srCount = 0;
-
-        data.assets.forEach(asset => {
-            if (asset.name.includes("savic_ru")) ruCount = asset.download_count;
-            if (asset.name.includes("savic_sr")) srCount = asset.download_count;
-        });
-
-        document.getElementById("ruDownloads").textContent = ruCount;
-        document.getElementById("srDownloads").textContent = srCount;
-
-    } catch (error) {
-        console.error("Book Counter Error:", error);
-    }
-}
-
-loadBookDownloadCounts();
+        if (ru) document.getElementById("downloads-ru").innerText = "Downloads: " + ru.download_count;
+        if (rs) document.getElementById("downloads-rs").innerText = "Downloads: " + rs.download_count;
+    });
 </script>
 
 </body>
