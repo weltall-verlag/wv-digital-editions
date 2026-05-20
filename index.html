@@ -46,18 +46,25 @@
             margin-bottom: 15px;
         }
 
+        .books-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
         .book-box {
             background: white;
             border-radius: 10px;
             padding: 20px;
-            margin: 20px auto;
-            max-width: 600px;
+            width: 360px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
         }
 
         .cover {
             display: block;
-            width: 180px;
+            width: 220px;
             margin: 0 auto 15px auto;
             border-radius: 6px;
         }
@@ -94,34 +101,38 @@
 <h1>WV Weltall Verlag – Digitale Buch‑Editionen</h1>
 <h2>Bücher von Radovan Savić</h2>
 
-<!-- RUSSISCH -->
-<div class="book-box">
-    <h3>🇷🇺 Русский</h3>
-    <img src="radovan-savich-ru/cover_ru.jpg" class="cover" alt="Russisches Cover">
+<div class="books-container">
 
-    <a class="button"
-       href="https://github.com/weltall-verlag/wv-digital-editions/releases/download/v1.0.0/savich-s-gitaroj-po-ghizni.pdf"
-       download>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg">
-        Скачать PDF
-    </a>
+    <!-- RUSSISCH -->
+    <div class="book-box">
+        <h3>🇷🇺 Русский</h3>
+        <img src="radovan-savich-ru/cover_ru.jpg" class="cover" alt="Russisches Cover">
 
-    <div class="downloads" id="downloads-ru">Downloads: …</div>
-</div>
+        <a class="button"
+           href="https://github.com/weltall-verlag/wv-digital-editions/releases/download/v1.0.0/savich-s-gitaroj-po-ghizni.pdf"
+           download>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg">
+            Скачать PDF
+        </a>
 
-<!-- SERBISCH -->
-<div class="book-box">
-    <h3>🇷🇸 Српски</h3>
-    <img src="radovan-savich-sr/cover_rs.jpg" class="cover" alt="Serbisches Cover">
+        <div class="downloads" id="downloads-ru">Downloads: …</div>
+    </div>
 
-    <a class="button"
-       href="https://github.com/weltall-verlag/wv-digital-editions/releases/download/v1.0.0/savich-gitarom-kroz-zivot.pdf"
-       download>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg">
-        Preuzmi PDF
-    </a>
+    <!-- SERBISCH -->
+    <div class="book-box">
+        <h3>🇷🇸 Српски</h3>
+        <img src="radovan-savich-rs/cover_sr.jpg" class="cover" alt="Serbisches Cover">
 
-    <div class="downloads" id="downloads-rs">Downloads: …</div>
+        <a class="button"
+           href="https://github.com/weltall-verlag/wv-digital-editions/releases/download/v1.0.0/savich-gitarom-kroz-zivot.pdf"
+           download>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg">
+            Preuzmi PDF
+        </a>
+
+        <div class="downloads" id="downloads-rs">Downloads: …</div>
+    </div>
+
 </div>
 
 <script>
@@ -130,12 +141,13 @@ fetch("https://api.github.com/repos/weltall-verlag/wv-digital-editions/releases/
     .then(data => {
         let assets = data.assets;
 
-        let ru = assets.find(a => a.name.includes("savic_ru"));
-        let rs = assets.find(a => a.name.includes("savic_sr"));
+        let ru = assets.find(a => a.name.includes("savich-s-gitaroj-po-ghizni"));
+        let rs = assets.find(a => a.name.includes("savich-gitarom-kroz-zivot"));
 
         if (ru) document.getElementById("downloads-ru").innerText = "Downloads: " + ru.download_count;
         if (rs) document.getElementById("downloads-rs").innerText = "Downloads: " + rs.download_count;
-    });
+    })
+    .catch(error => console.error("Fehler beim Abrufen der Download-Zähler:", error));
 </script>
 
 </body>
