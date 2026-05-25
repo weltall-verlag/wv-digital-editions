@@ -73,6 +73,32 @@
     animation: fadeIn 0.8s ease forwards;
 }
 
+.info-box {
+    background: #fff;
+    border: 1px solid #e0d8c3;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 40px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #3b2f1e;
+    line-height: 1.7;
+}
+
+.info-box h2 {
+    color: #003366; /* gleiche Farbe wie WV Weltall Verlag */
+    font-weight: normal;
+    border-bottom: 1px solid #d4af37; /* Gold-Akzent */
+    padding-bottom: 6px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.info-box strong {
+    color: #3b2f1e;
+}
+
+
 @keyframes fadeIn {
     to {
         opacity: 1;
@@ -180,30 +206,29 @@ fetch("https://api.github.com/repos/weltall-verlag/wv-digital-editions/releases/
     })
     .catch(error => console.error("Fehler beim Abrufen der Download-Zähler:", error));
 </script>
-    <!-- letzter vorhandener Inhalt deiner Seite -->
 
-    <!-- HIER den neuen Abschnitt einfügen -->
-    <section style="margin-top:40px; background:#fff; border:1px solid #ddd; border-radius:8px; padding:25px;">
-      <h2 style="color:#003366; margin-top:0;">Über das Buch</h2>
+<div class="info-box">
+    <h2>Über das Buch</h2>
 
-      <p style="font-size:1.05em; color:#333; margin-bottom:20px;">
+    <p>
         <strong>🇩🇪 Deutsch</strong><br>
         Dieses Buch beschreibt den Lebens‑ und Erkenntnisweg des Musikers und Barden Radovan Savić, der über fünfzehn Jahre lang Weggefährte des indischen Gurus Maharishi Mahesh Yogi war.
         Es vermittelt Einsichten in persönliche Entwicklung und zeigt einen wirkungsvollen Ansatz, um geistiges Wachstum und Selbstentfaltung auf effiziente Weise zu fördern.
-      </p>
+    </p>
 
-      <p style="font-size:1.05em; color:#333; margin-bottom:20px;">
+    <p>
         <strong>🇷🇺 Русский</strong><br>
         Эта книга о жизненном и духовном пути музыканта и барда Радована Савича, являвшегося более пятнадцати лет своей жизни верным соратником всемирно известного индийского гуру Махариши Махеш Йоги.
         В книге содержится много информации по психологии личностного роста и представлена эффективная методика быстрого достижения высоких результатов саморазвития.
-      </p>
+    </p>
 
-      <p style="font-size:1.05em; color:#333;">
+    <p>
         <strong>🇷🇸 Српски</strong><br>
         Ovo je knjiga o životnom i duhovnom putu muzičara i barda Radovana Savića, koji je više od petnaest godina svog života bio verni sledbenik svetski poznatog indijskog gurua Mahariši Maheš Jogija.
         Knjiga sadrži mnogo informacija o psihologiji ličnog rasta i predstavlja efikasnu metodu za brzo postizanje visokih rezultata u samorazvoju.
-      </p>
-    </section>
+    </p>
+</div>
+
 
 </body>
 </html>
