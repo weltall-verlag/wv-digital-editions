@@ -96,7 +96,7 @@
 }
 
 .info-box strong {
-    color: #3b2f1e;
+    color: #3b2f1e;    
 }
 
 .book-title-block {
@@ -110,9 +110,15 @@
   font-weight: 600;
   font-size: 0.95em;
   color: #3b2f1e;
-  margin: 6px 0;
+  margin-top: 0.3em;       /* weniger Abstand über dem Titel */
+  margin-bottom: 0.2em;    /* weniger Abstand unter dem Titel */
 }
 
+.info-box p {
+    margin-top: 0.6em;       /* allgemeiner Absatzabstand */
+    margin-bottom: 0.8em;    /* etwas mehr Luft nach unten */
+    line-height: 1.55;       /* angenehme Lesbarkeit */
+}
 
 .book-title-divider {
     width: 60%;
@@ -120,8 +126,7 @@
     background-color: #d4af37;  /* Gold */
     margin: 10px auto 0 auto;
     border: none;
-}
-        
+}  
 
 @keyframes fadeIn {
     to {
