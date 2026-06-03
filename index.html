@@ -214,6 +214,25 @@
       margin-right: auto;
       line-height: 1.35; /* dichter, aber gut lesbar */
     }
+       /* Einheitliche Sprachüberschriften */
+h3.language-title {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    font-size: 1.4em;
+    color: #1b7b7b; /* Türkis wie im RU-Beispiel */
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* Optional: Sprachkürzel (DE, RU, RS) leicht absetzen */
+.language-code {
+    font-weight: 700;
+    font-size: 0.9em;
+    color: #1b7b7b;
+    margin-right: 6px;
+}
+
     </style>
 </head>
 
@@ -279,25 +298,17 @@ fetch("https://api.github.com/repos/weltall-verlag/wv-digital-editions/releases/
 
 <div class="info-box">
     <h3>Über das Buch / О књизи / О книге </h3>
-    <p>
-        <strong>🇩🇪 Deutsch</strong><br>
-        Dieses Buch beschreibt den Lebens‑ und Erkenntnisweg des Musikers und Barden Radovan Savić, der über fünfzehn Jahre lang Weggefährte des indischen Gurus Maharishi Mahesh Yogi war.
-        Es vermittelt Einsichten in persönliche Entwicklung und zeigt einen wirkungsvollen Ansatz, um geistiges Wachstum und Selbstentfaltung auf effiziente Weise zu fördern.
-    </p>
+    <h3 class="language-title"><span class="language-code">DE</span> Deutsch</h3>
+<p>Dieses Buch beschreibt den Lebens- und Erkenntnisweg des Musikers und Barden Radovan Savić, der über fünfzehn Jahre lang Weggefährte des Gurus Maharishi Mahesh Yogi war. Es vermittelt Einsichten in persönliche Entwicklung und zeigt einen wirkungsvollen Ansatz, um geistiges Wachstum und Selbstentfaltung auf effiziente Weise zu fördern.</p>
 
-    <p>
-        <strong>🇷🇺 Русский</strong><br>
-        <span class="book-title">Радован Савич. "С гитарой по жизни к прозрению истины." </span><br>
-        Эта книга о жизненном и духовном пути музыканта и барда Радована Савича, являвшегося более пятнадцати лет своей жизни верным соратником всемирно известного индийского гуру Махариши Махеш Йоги.
-        В книге содержится много информации по психологии личностного роста и представлена эффективная методика быстрого достижения высоких результатов саморазвития.
-    </p>
+<h3 class="language-title"><span class="language-code">RU</span> Русский</h3>
+<p>Радован Савич. "С гитарой по жизни к прозрению истины."<br>
+Эта книга о жизненном и духовном пути музыканта и барда Радована Савича, являющегося более пятнадцати лет своей жизни верным последователем гуру Махариши Махеш Йоги. В книге содержится много информации по психологии личностного роста и представлена эффективная методика достижения высоких результатов самосовершенствования.</p>
 
-    <p>
-        <strong>🇷🇸 Српски</strong><br>
-        <span class="book-title">Radovan Savić. "S gitarom kroz život do spoznaje istine." Autobiografska priča.</span><br>
-        Ovo je knjiga o životnom i duhovnom putu muzičara i barda Radovana Savića, koji je više od petnaest godina svog života bio verni sledbenik svetski poznatog indijskog gurua Mahariši Maheš Jogija.
-        Knjiga sadrži mnogo informacija o psihologiji ličnog rasta i predstavlja efikasnu metodu za brzo postizanje visokih rezultata u samorazvoju.
-    </p>
+    <h3 class="language-title"><span class="language-code">RS</span> Српски</h3>
+<p>Radovan Savić. "S gitarom kroz život do spoznaje istine." Autobiografska priča.<br>
+Ovo je knjiga o životnom i duhovnom putu muzičara i barda Radovana Savića, koji je više od petnaest godina svog života bio verni sledbenik svog gurua Maharishija Mahesh Jogija. Knjiga sadrži mnogo informacija o psihologiji ličnog rasta i predstavlja efikasnu metodu za brzo postizanje visokih rezultata u samorazvoju.</p>
+
 </div>
 
 
