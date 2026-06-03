@@ -197,6 +197,23 @@
             color: #555;
             text-align: center;
         }
+
+  .flag-icon {
+  font-size: 22px;
+  margin-right: 10px;
+  vertical-align: middle;
+  }   
+
+        .subtitle {
+      margin-top: 6px;
+      margin-bottom: 10px; /* vorher vermutlich 30–40px */
+      font-size: 18px;
+      color: #555;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.35; /* dichter, aber gut lesbar */
+    }
     </style>
 </head>
 
@@ -204,15 +221,18 @@
 
 <h1>WV Weltall Verlag – Digitale Buch‑Editionen</h1>
 <h2>🌿  Бесплатные книги издательства WV Weltall Verlag e.K.</h2>
- <p> Нажмите на соответствующий символ, чтобы перейти к загрузке. </p>
+     <div class="subtitle">
+ Нажмите на соответствующий символ, чтобы перейти к загрузке.
+     </div>
 <h2>🌿  Бесплатне књиге издавачке куће WV Weltall Verlag e.K.</h2>
- <p> Кликните на одговарајућу икону да бисте започели преузимање.</p>
-    
+ <div class="subtitle">
+     Кликните на одговарајућу икону да бисте започели преузимање.
+   </div>  
 <div class="books-container">
 
     <!-- RUSSISCH -->
     <div class="book-box">
-        <h2>🇷🇺 Русский</h2>
+        <h2><span class="flag-icon">🇷🇺</span> Русский</h2>
         <img src="radovan-savich-ru/cover_ru.jpg" class="cover" alt="Russisches Cover">
 
         <a class="button"
@@ -227,7 +247,7 @@
 
     <!-- SERBISCH -->
     <div class="book-box">
-        <h2>🇷🇸 Српски</h2>
+        <h2><span class="flag-icon">🇷🇸</span> Српски</h2>
         <img src="radovan-savich-sr/cover_rs.jpg" class="cover" alt="Serbisches Cover">
 
         <a class="button"
@@ -259,7 +279,6 @@ fetch("https://api.github.com/repos/weltall-verlag/wv-digital-editions/releases/
 
 <div class="info-box">
     <h3>Über das Buch / О књизи / О книге </h3>
-
     <p>
         <strong>🇩🇪 Deutsch</strong><br>
         Dieses Buch beschreibt den Lebens‑ und Erkenntnisweg des Musikers und Barden Radovan Savić, der über fünfzehn Jahre lang Weggefährte des indischen Gurus Maharishi Mahesh Yogi war.
