@@ -1,2 +1,2 @@
 # wv-digital-editions
-Digitale Editionen des WV Weltall Verlag e.K. – E‑Books und PDF‑Downloads.
+**WV Weltall Verlag e.K.** – Электронные книги / Digitale Buch‑Editionen
