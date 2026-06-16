@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <title>С гитарой по жизни к прозрению истины — Радован Савич | Schema Data</title>
@@ -13,7 +15,7 @@
   <meta property="og:image" content="https://weltall-verlag.github.io/wv-digital-editions/assets/covers/savic-gitaroj.jpg">
   <meta property="og:type" content="book">
   <meta property="og:locale" content="ru_RU">
-  <meta property="og:url" content="https://weltall-verlag.de/ru/p/savic-gitaroj">
+  <meta property="og:url" content="https://weltall-verlag.de/p/s-gitaroi-po-zhizni-k-prozreniyu-istiny-radovan-savich">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -32,11 +34,15 @@
     "offers": {
       "@type": "Offer",
       "priceCurrency": "EUR",
-      "price": "9.90",
+      "price": "12.00",
       "availability": "https://schema.org/InStock",
-      "url": "https://weltall-verlag.de/ru/p/savic-gitaroj"
+      "url": "https://weltall-verlag.de/p/s-gitaroi-po-zhizni-k-prozreniyu-istiny-radovan-savich"
     }
   }
   </script>
 </head>
 
+<body>
+  <p>Technische Schema‑Daten für Google Search Console.</p>
+</body>
+</html>
