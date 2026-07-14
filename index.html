@@ -280,7 +280,107 @@ h3.language-title {
     line-height: 1.4;
     border-bottom: 1px solid rgba(42,157,143,0.6); /* leicht transparent für ruhigen Abschluss */
 }
-        
+
+        /* WV Digital Editions – Stilharmonisierung mit I Ching Edition */
+
+:root {
+  --background: #f8f9f8;
+  --primary: #2b8a7e;
+  --accent: #f4c97a;
+  --text: #1f3b3a;
+  --link-hover: #3b9c8c;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Noto Sans", "Merriweather", serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: "Noto Serif Display", serif;
+  color: var(--primary);
+  text-align: center;
+  margin: 1.5rem 0 0.5rem;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--primary);
+  margin: 1.5rem auto;
+  width: 80%;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(43, 138, 126, 0.1);
+}
+
+.icon, .emoji {
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--primary);
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+}
+/* Harmonisches Header-Banner im Stil der I‑Ching-Seite */
+
+.header-banner {
+  width: 100%;
+  padding: 3rem 1rem;
+  background: linear-gradient(
+    180deg,
+    #f8f9f8 0%,
+    #e9f2ef 40%,
+    #dfeeea 100%
+  );
+  text-align: center;
+  border-bottom: 1px solid var(--primary);
+}
+
+.header-banner h1 {
+  font-family: "Noto Serif Display", serif;
+  font-size: 2.4rem;
+  color: var(--primary);
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+.header-banner p {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.2rem;
+  color: var(--text);
+  margin-top: 0.8rem;
+  opacity: 0.85;
+}
+
+.header-symbol {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
     </style>
 </head>
 
@@ -327,6 +427,11 @@ h3.language-title {
         <div class="downloads" id="downloads-rs">Downloads: …</div>
     </div>
 
+</div>
+<div class="header-banner">
+  <div class="header-symbol">☯</div>
+  <h1>WV Digital Editions</h1>
+  <p>Digitale Bücher – klar, ruhig, harmonisch</p>
 </div>
 
 <script>
